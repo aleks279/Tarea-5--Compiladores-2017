@@ -1,4 +1,4 @@
-package tarea5compiladores;
+package tarea5;
 import java_cup.runtime.*;
 
 %%
@@ -102,7 +102,7 @@ abs          {return newSym(sym.ABS);}
 "<"             { return newSym(sym.GTR); }
 ">"             { return newSym(sym.LESS); }
 
-"ยก"            { return newSym(sym.A1); }
+"ก"            { return newSym(sym.A1); }
 "!"            { return newSym(sym.A2); }
 
 "'"            { return newSym(sym.B1); }
