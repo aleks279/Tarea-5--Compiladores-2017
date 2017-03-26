@@ -92,7 +92,7 @@ var             { return newSym(sym.VAR); }
 ":="            { return newSym(sym.ASSMNT); }
 "."             { return newSym(sym.DOT); }
 {identifier}    { return newSym(sym.IDENT, yytext()); }
-//{integer}       { return newSym(sym.INT, new Integer(yytext())); }
+{integer}       { return newSym(sym.INTEGER, new Integer(yytext())); }
 {real}          { return newSym(sym.REAL, new Double(yytext())); }
 {char}          { return newSym(sym.CHAR, new Character(yytext().charAt(1))); }
 {comment}       { /* For this stand-alone lexer, print out comments. */
