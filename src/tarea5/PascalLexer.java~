@@ -683,7 +683,7 @@ Symbol newSym(int tokenId, Object value) {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
-            { return newSym(sym.INT, new Integer(yytext()));
+            { return newSym(sym.INTEGER, new Integer(yytext()));
             }
           case 40: break;
           case 2: 

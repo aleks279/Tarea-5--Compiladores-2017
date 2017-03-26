@@ -40,4 +40,5 @@ public class sym {
 	  public static final int GTR_EQ = 29;
 	  public static final int VAR = 14;
 	  public static final int PROCEDURE = 11;
+	public static final int INTEGER = 0;
 	}
