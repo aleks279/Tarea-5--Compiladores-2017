@@ -52,7 +52,7 @@ rightbrace      = \}
 nonrightbrace   = [^}]
 comment_body    = {nonrightbrace}*
 comment         = {leftbrace}{comment_body}{rightbrace}
-whitespace      = [ \n\t]
+whitespace      = [ \\n\\t]
 
 
 %%
@@ -92,7 +92,7 @@ var             { return newSym(sym.VAR); }
 ":="            { return newSym(sym.ASSMNT); }
 "."             { return newSym(sym.DOT); }
 {identifier}    { return newSym(sym.IDENT, yytext()); }
-{integer}       { return newSym(sym.INTEGER); }
+{integer}       { return newSym(sym.INTEGER, new Integer(yytext())); }
 {real}          { return newSym(sym.REAL, new Double(yytext())); }
 {char}          { return newSym(sym.CHAR, new Character(yytext().charAt(1))); }
 {comment}       { /* For this stand-alone lexer, print out comments. */

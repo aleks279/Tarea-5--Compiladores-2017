@@ -43,7 +43,7 @@ public class Main {
 				
 				while((sym = lexer.next_token()).sym != 0) {
 					System.out.println("Token: "+sym.right+", value: "+sym.value);
-					TimeUnit.SECONDS.sleep(1);
+					TimeUnit.MILLISECONDS.sleep(300);
 				}
 			} catch (Exception e) {
 
