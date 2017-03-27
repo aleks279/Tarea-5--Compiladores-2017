@@ -6,11 +6,11 @@ import java_cup.runtime.*;
  * LEXICAL FUNCTIONS:
  */
 
+%class ScannerLexer
+%unicode
 %cup
 %line
 %column
-%unicode
-%class PascalLexer
 
 %{
 
@@ -106,9 +106,8 @@ abs          {return newSym(sym.ABS);}
 "!"            { return newSym(sym.A2); }
 
 "'"            { return newSym(sym.B1); }
-"'"            { return newSym(sym.B2); }
 
-{INTEGER}            { return symbol(sym.INTEGER); }
+{integer}            { return symbol(sym.INTEGER); }
 {comment}       { /* For this stand-alone lexer, print out comments. */
                   System.out.println("Recognized comment: " + yytext()); }
 {whitespace}    { /* Ignore whitespace. */ }

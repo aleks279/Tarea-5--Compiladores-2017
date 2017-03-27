@@ -18,8 +18,16 @@ public class Main {
 		System.out.println("Carlos Arguello");
 		System.out.println("Saul Zamora");
 		System.out.println("");
-		System.out.println("Inserte la direccion del archivo Pascal a tokenizar:");
+		
+		String pascalFlex = "./src/tarea5/pascal.jflex";
+		File jflexFile = new File(pascalFlex);
 
+		jflex.Main.generate(jflexFile);
+
+		Symbol sym;
+		
+		System.out.println("Inserte la direccion del archivo Pascal a tokenizar:");
+		
 		try {
 
 			Scanner scanner = new Scanner(System.in);
@@ -28,13 +36,6 @@ public class Main {
 			scanner.close();
 
 			FileReader fileContents = InputManager.readFile(filepath);
-
-			String pascalFlex = "./src/tarea5/pascal.jflex";
-			File jflexFile = new File(pascalFlex);
-
-			jflex.Main.generate(jflexFile);
-
-			Symbol sym;
 
 			try {
 				PascalLexer lexer = new PascalLexer(fileContents);
