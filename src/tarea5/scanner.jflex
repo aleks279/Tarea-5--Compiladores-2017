@@ -6,7 +6,7 @@ import java_cup.runtime.*;
  * LEXICAL FUNCTIONS:
  */
 
-%class ScannerLexer
+%class PascalLexer
 %unicode
 %cup
 %line
