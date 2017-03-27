@@ -2,13 +2,17 @@ package tarea5;
 
 import java.io.*;
 import java_cup.runtime.*;
-
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
+import java.util.regex.*;
 
 public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-
+		
 		System.out.println("ITCR");
 		System.out.println("Ing en Computacion");
 		System.out.println("Compiladores e Interpretes");
@@ -18,29 +22,41 @@ public class Main {
 		System.out.println("Saul Zamora");
 		System.out.println("");
 		System.out.println("Inserte la direccion del archivo Pascal a tokenizar:");
+		
+		try{
+			 
+	                       
+	                Scanner scanner = new Scanner(System.in);
+	        		System.out.flush();
+	        		String filepath = scanner.nextLine();
+	        		scanner.close();
+	 
+	         
+	            
+	            FileReader fileContents = InputManager.readFile(filepath);
 
-		Scanner scanner = new Scanner(System.in);
-		System.out.flush();
-		String filepath = scanner.nextLine();
-		scanner.close();
+	    		String pascalFlex = "./src/tarea5/pascal.jflex";
+	    		File jflexFile = new File(pascalFlex);
 
-		FileReader fileContents = InputManager.readFile(filepath);
+	    		jflex.Main.generate(jflexFile);
 
-		String pascalFlex = "./src/tarea5/pascal.jflex";
-		File jflexFile = new File(pascalFlex);
+	    		Symbol sym;
 
-		jflex.Main.generate(jflexFile);
+	    		try {
+	    			PascalLexer lexer = new PascalLexer(fileContents);
+	    			for (sym = lexer.next_token(); sym.sym != 0; sym = lexer.next_token()) {
+	    				System.out.println("Token " + sym.right + ", with value = " + sym.value +"; at line " + sym.left + ", column " + sym.right);
+	    			}
+	    		} catch (Exception e) {
+	    		
+	            
+	    		}
+	                //file I/O can potentially generate a FileNotFoundException if the specified file 
+	                //does not exist, and therefore must implement exception handling syntax
+	     
+	      }catch (IOException e) { System.err.println("Error With File");}
 
-		Symbol sym;
-
-		try {
-			PascalLexer lexer = new PascalLexer(fileContents);
-			for (sym = lexer.next_token(); sym.sym != 0; sym = lexer.next_token()) {
-				System.out.println("Token " + sym.right + ", with value = " + sym.value +"; at line " + sym.left + ", column " + sym.right);
-			}
-		} catch (Exception e) {
-		}
-
+		
 	}
 
 }
