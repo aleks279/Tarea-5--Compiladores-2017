@@ -5,6 +5,7 @@ import java_cup.runtime.*;
 import java.util.Scanner;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
@@ -39,9 +40,10 @@ public class Main {
 
 			try {
 				PascalLexer lexer = new PascalLexer(fileContents);
-				for (sym = lexer.next_token(); sym.sym != 0; sym = lexer.next_token()) {
-					System.out.println("Token " + sym.right + ", with value = " + sym.value + "; at line " + sym.left
-							+ ", column " + sym.right);
+				
+				while((sym = lexer.next_token()).sym != 0) {
+					System.out.println("Token: "+sym.right+", value: "+sym.value);
+					TimeUnit.SECONDS.sleep(1);
 				}
 			} catch (Exception e) {
 
