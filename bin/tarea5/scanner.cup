@@ -1,0 +1,56 @@
+package tarea5;
+import java_cup.runtime.*;
+
+terminal PROGRAM;
+terminal INPUT;
+terminal OUTPUT;
+terminal VAR;
+terminal BEGIN;
+terminal Write;
+terminal ReadLn;
+terminal WriteLn;
+terminal END;
+terminal WHILE;
+terminal IF;
+terminal ELSE;
+terminal THEN;
+terminal INC;
+terminal USES;
+terminal CLRSCR;
+terminal FOR;
+terminal TO;
+terminal DO;
+terminal USES;
+terminal SQRT;
+terminal ABS;
+terminal USES;
+
+terminal TIMES;
+terminal PLUS;
+terminal MINUS;
+terminal DIVIDE;
+terminal EQ;
+terminal SEMI;
+terminal COMMA;
+terminal LEFT_PAREN;
+terminal RT_PAREN;
+terminal LEFT_BRKT;
+terminal RT_BRKT;
+terminal COLON;
+terminal DOT;
+terminal ASSMNT;
+terminal GTR;
+terminal LESS;
+terminal ASSMNT;
+terminal A1;
+terminal A2;
+terminal B1;
+terminal B2;
+terminal INTEGER;
+
+/*-*
+ * The following two lines define a dummy non-terminal and grammar rule.  CUP
+ * needs at least one rule to run without errors.
+ */
+non terminal dummy;
+dummy ::= ;
